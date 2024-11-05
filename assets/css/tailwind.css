@@ -1,0 +1,197 @@
+@import "tippy.js/dist/tippy.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 20 14.3% 4.1%;
+
+        --muted: 60 4.8% 95.9%;
+        --muted-foreground: 25 5.3% 44.7%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 20 14.3% 4.1%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 20 14.3% 4.1%;
+
+        --border: 20 5.9% 90%;
+        --input: 20 5.9% 90%;
+
+        --primary: 228, 63%, 51%;
+        --primary-foreground: 60 9.1% 97.8%;
+
+        --secondary: 60 4.8% 95.9%;
+        --secondary-foreground: 24 9.8% 10%;
+
+        --accent: 60 4.8% 95.9%;
+        --accent-foreground: 24 9.8% 10%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 60 9.1% 97.8%;
+
+        --ring: 211 100% 32%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 20 14.3% 4.1%;
+        --foreground: 60 9.1% 97.8%;
+
+        --muted: 12 6.5% 15.1%;
+        --muted-foreground: 24 5.4% 63.9%;
+
+        --popover: 20 14.3% 4.1%;
+        --popover-foreground: 60 9.1% 97.8%;
+
+        --card: 20 14.3% 4.1%;
+        --card-foreground: 60 9.1% 97.8%;
+
+        --border: 12 6.5% 15.1%;
+        --input: 12 6.5% 15.1%;
+
+        --primary: 228, 63%, 51%;
+        --primary-foreground: 24 9.8% 10%;
+
+        --secondary: 12 6.5% 15.1%;
+        --secondary-foreground: 60 9.1% 97.8%;
+
+        --accent: 12 6.5% 15.1%;
+        --accent-foreground: 60 9.1% 97.8%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 60 9.1% 97.8%;
+
+        --ring: 24 5.7% 82.9%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    *::selection {
+        @apply bg-primary text-primary-content;
+    }
+
+    .prose {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            @apply text-base-content;
+            font-family: "Kdam Thmor Pro", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    }
+}
+
+.tiptap .is-empty::before {
+    @apply text-slate-300;
+    @apply content-[attr(data-placeholder)];
+    @apply float-left;
+    @apply pointer-events-none;
+    @apply h-0;
+}
+
+.tippy-box {
+    @apply rounded-md bg-base-content text-xs text-base-100/80;
+}
+.tippy-arrow {
+    @apply text-base-content;
+}
+
+/* nuxt transitions */
+.page-enter-active,
+.page-leave-active {
+    @apply transition-all duration-150;
+}
+.page-enter-from,
+.page-leave-to {
+    @apply translate-y-12 opacity-0;
+}
+
+.layout-enter-active,
+.layout-leave-active {
+    @apply transition-all duration-150;
+}
+.layout-enter-from,
+.layout-leave-to {
+    @apply translate-y-12 opacity-0;
+}
+/* end nuxt transitions */
+
+/* generic transitions */
+.translateY-enter-active,
+.translateY-leave-active {
+    @apply transition-all;
+}
+.translateY-enter-from,
+.translateY-leave-to {
+    @apply -translate-y-4 opacity-0;
+}
+.translateY-enter-to,
+.translateY-leave-from {
+    @apply translate-y-0 opacity-100;
+}
+
+.scale-enter-active,
+.scale-leave-active {
+    @apply transition-all;
+}
+.scale-enter-from,
+.scale-leave-to {
+    @apply scale-0 opacity-0;
+}
+.scale-enter-to,
+.scale-leave-from {
+    @apply scale-100 opacity-100;
+}
+
+.translateX-enter-active,
+.translateX-leave-active {
+    @apply transition-all;
+}
+.translateX-enter-from,
+.translateX-leave-to {
+    @apply -translate-x-4 opacity-0;
+}
+.translateX-enter-to,
+.translateX-leave-from {
+    @apply translate-x-0 opacity-100;
+}
+
+.-translateX-enter-active,
+.-translateX-leave-active {
+    @apply transition-all;
+}
+.-translateX-enter-from,
+.-translateX-leave-to {
+    @apply translate-x-4 opacity-0;
+}
+.-translateX-enter-to,
+.-translateX-leave-from {
+    @apply translate-x-0 opacity-100;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    @apply transition-opacity;
+}
+.fade-enter-from,
+.fade-leave-to {
+    @apply opacity-0;
+}
+.fade-enter-to,
+.fade-leave-from {
+    @apply opacity-100;
+}
+/* end generic transitions */

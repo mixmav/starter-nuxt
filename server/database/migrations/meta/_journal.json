@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1730701646863,
+      "tag": "0000_faithful_mephisto",
+      "breakpoints": true
+    }
+  ]
+}
